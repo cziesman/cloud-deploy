@@ -21,6 +21,7 @@ public class TemperaturesRESTRouteBuilder extends RouteBuilder {
         // - REST config
         restConfiguration()
 			.component("servlet")
+                .port(8080)
 			.bindingMode(RestBindingMode.json);
 
 
