@@ -31,10 +31,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-spring-boot-starter</artifactId>
@@ -102,31 +102,31 @@
 			</plugin>
 		</plugins>
 	</build>
-    <profiles>
-		<!-- TODO: Uncomment OpenShift profile + openshift-maven-plugin -->
-		<profile>
-			<id>openshift</id>
-			<properties>
-				<jkube.generator.from>default-route-openshift-image-registry.apps-crc.testing/cloud-deploy/fuse-java-openshift-jdk11-rhel8:${container.image.version}</jkube.generator.from>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.jboss.redhat-fuse</groupId>
-						<artifactId>openshift-maven-plugin</artifactId>
-						<version>${fuse.version}</version>
-						<executions>
-							<execution>
-								<goals>
-									<goal>resource</goal>
-									<goal>build</goal>
-									<goal>apply</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-    </profiles>
+<!--    <profiles>-->
+<!--		&lt;!&ndash; TODO: Uncomment OpenShift profile + openshift-maven-plugin &ndash;&gt;-->
+<!--		<profile>-->
+<!--			<id>openshift</id>-->
+<!--			<properties>-->
+<!--				<jkube.generator.from>default-route-openshift-image-registry.apps-crc.testing/cloud-deploy/fuse-java-openshift-jdk11-rhel8:${container.image.version}</jkube.generator.from>-->
+<!--			</properties>-->
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.jboss.redhat-fuse</groupId>-->
+<!--						<artifactId>openshift-maven-plugin</artifactId>-->
+<!--						<version>${fuse.version}</version>-->
+<!--						<executions>-->
+<!--							<execution>-->
+<!--								<goals>-->
+<!--									<goal>resource</goal>-->
+<!--									<goal>build</goal>-->
+<!--									<goal>apply</goal>-->
+<!--								</goals>-->
+<!--							</execution>-->
+<!--						</executions>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
+<!--		</profile>-->
+<!--    </profiles>-->
 </project>
